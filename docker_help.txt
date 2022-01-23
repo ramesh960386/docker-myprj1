@@ -1,0 +1,52 @@
+192.168.1.7:8000
+192.168.56.1:8000
+192.168.99.1:8000
+
+https://code.visualstudio.com/docs/containers/quickstart-python
+https://docs.microsoft.com/en-us/visualstudio/docker/tutorials/docker-tutorial?WT.mc_id=vscode_docker_aka_helppanel
+https://docs.docker.com/samples/django/
+
+
+docker run -p 8000:8000
+
+
+docker build --tag doc_prj1:latest .
+docker run --name doc_prj1 -d -p 8000:8000 doc_prj1:latest
+
+
+docker build --tag django_todo:latest .
+docker run --name django_todo -d -p 9000:9000 django_todo:latest
+
+docker run -p 3000:80 django_todo:latest
+
+
+docker build --tag django_todo:latest .
+docker run -p 8000:8000 django_todo:latest
+
+
+curl http://localhost:8000
+
+ docker inspect --format '127.0.0.1' mynginx
+
+http://<docker-machine ip>:<exposed port>
+http://172.17.0.1:8000
+
+docker port mynginx
+80/tcp -> 0.0.0.0:32768
+
+
+docker port error resolved
+
+https://github.com/docker/for-win/issues/204
+docker-machine ip
+192.168.99.100
+
+
+docker inspect mynginx | findstr.exe IPAddress
+
+
+docker build --tag djprj1:latest .
+docker run --name djprj1 -p 8000:8000 djprj1:latest
+
+docker image prune -a
+docker rm $(docker ps --filter status=exited -q)
